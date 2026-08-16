@@ -2,7 +2,7 @@
 const canvas=document.querySelector("#game"),ctx=canvas.getContext("2d"),nextCtx=document.querySelector("#next").getContext("2d");
 const $=s=>document.querySelector(s), ui={score:$("#score"),best:$("#best"),chain:$("#chain"),warning:$("#warning")};
 const LEVELS=[
- {n:"Spark",r:13,c:"#aefcff"},{n:"Ember",r:17,c:"#ffd85c"},{n:"Dew",r:22,c:"#6fffb4"},{n:"Nova",r:28,c:"#ff77be"},{n:"Halo",r:35,c:"#aa7cff"},{n:"Terra",r:43,c:"#48bfff"},{n:"Sol",r:52,c:"#ff9748"},{n:"Astra",r:62,c:"#f45f7d"},{n:"Giant",r:73,c:"#5bd6c5"},{n:"Quasar",r:85,c:"#c17cff"},{n:"Cosma",r:98,c:"#fff1a1"}
+ {n:"Spark",r:15,c:"#aefcff"},{n:"Ember",r:19,c:"#ffd85c"},{n:"Dew",r:25,c:"#6fffb4"},{n:"Nova",r:31,c:"#ff77be"},{n:"Halo",r:39,c:"#aa7cff"},{n:"Terra",r:48,c:"#48bfff"},{n:"Sol",r:58,c:"#ff9748"},{n:"Astra",r:69,c:"#f45f7d"},{n:"Giant",r:82,c:"#5bd6c5"},{n:"Quasar",r:95,c:"#c17cff"},{n:"Cosma",r:110,c:"#fff1a1"}
 ];
 let W=360,H=600,dpr=1,bodies=[],particles=[],ripples=[],floaters=[],running=false,paused=false,gameOver=false,aimX=180,current=0,next=0,canDrop=true,score=0,best=+(localStorage.cosmoDropsBest||0),maxLevel=0,dropId=0,chain=0,chainTimer=0,dangerSince=0,last=0,audio=null,soundOn=localStorage.cosmoDropsSound!=="off",shake=0;
 ui.best.textContent=best; $("#sound").classList.toggle("muted",!soundOn);
