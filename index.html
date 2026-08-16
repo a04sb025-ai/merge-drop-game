@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#09152d">
+  <title>Cosmo Drops — 星雲合体パズル</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand"><span>COSMO</span> DROPS</div>
+      <div class="stats"><div><small>SCORE</small><b id="score">0</b></div><div><small>BEST</small><b id="best">0</b></div></div>
+      <button id="sound" class="icon" aria-label="サウンド切替">♪</button>
+      <button id="pause" class="icon" aria-label="一時停止">Ⅱ</button>
+    </header>
+    <section class="game-shell" aria-label="ゲーム盤">
+      <canvas id="game"></canvas>
+      <div class="next"><small>NEXT</small><canvas id="next" width="72" height="72"></canvas></div>
+      <div id="chain" class="chain"></div>
+      <div id="warning" class="warning">DANGER</div>
+    </section>
+    <p class="hint">指で左右へ動かして、離すとドロップ</p>
+  </main>
+
+  <div id="startOverlay" class="overlay visible">
+    <div class="card">
+      <div class="logo-orbit">✦</div><p class="eyebrow">A GRAVITY MERGE PUZZLE</p>
+      <h1>COSMO<br><em>DROPS</em></h1>
+      <p class="howto">↔ 左右に動かして、離して落とす<br><span>同じ星のタネをぶつけて進化！</span></p>
+      <button id="play" class="primary">PLAY <span>▶</span></button>
+      <p class="goal">全11種の星を育て、宇宙の花を咲かせよう</p>
+    </div>
+  </div>
+  <div id="pauseOverlay" class="overlay"><div class="card compact"><h2>PAUSED</h2><button id="resume" class="primary">つづける</button></div></div>
+  <div id="gameoverOverlay" class="overlay"><div class="card compact"><p class="eyebrow">MISSION COMPLETE</p><h2>GAME OVER</h2><div class="results"><div><small>SCORE</small><b id="finalScore">0</b></div><div><small>BEST</small><b id="finalBest">0</b></div><div><small>MAX STAR</small><b id="maxLevel">1</b></div></div><button id="retry" class="primary">もう一度</button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
